@@ -14,3 +14,18 @@ station_covering_mapping["Station Three"] = {"or", "nv", "ca"}
 station_covering_mapping["Station Four"] = {"nv", "ut"}
 station_covering_mapping["Station Five"] = {"ca", "az"}
 
+solution_of_stations = []
+
+while states_ToBe_Covered:
+    best_station = None
+    states_covered_sofar = set()
+    # find the most covered station
+    for station, states in station_covering_mapping.items():
+        covered_states_for_thisStation = states & states_ToBe_Covered
+        if len(covered_states_for_thisStation) > len(states_covered_sofar):
+            best_station = station
+            states_covered_sofar = covered_states_for_thisStation
+    solution_of_stations.append(best_station)
+    states_ToBe_Covered -= states_covered_sofar
+
+print(solution_of_stations)
