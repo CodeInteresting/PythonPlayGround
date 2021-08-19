@@ -17,8 +17,12 @@ costs["BassGuitar"] = infinity
 costs["Drum"] = infinity
 costs["Piano"] = infinity
 
+# Processed Node won't be processed again.
+# Processed Node means that the lowest cost from start to that node
+# has been determined
 processed_nodes = set()
 
+# Trace the previous node of current node
 parents = {}
 
 
