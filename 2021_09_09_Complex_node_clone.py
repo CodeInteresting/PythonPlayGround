@@ -37,4 +37,3 @@ def clone_list(old_list):
             pairs[p_old].sibling = pairs[p_old.sibling]
 
     return dummy_head.next
-
